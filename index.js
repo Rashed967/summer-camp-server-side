@@ -28,12 +28,20 @@ async function run() {
 
     // database collection 
     const intructorCollection = client.db('instructorDb').collection('instructors')
+    const classCollection = client.db('instructorDb').collection('classs')
 
     
 
     // intructor collection db
     app.get('/instructors', async(req, res) => {
       const result = await intructorCollection.find().toArray()
+      res.send(result)
+    })
+
+
+    // classes collection 
+    app.get('/classes', async(req, res) => {
+      const result = await classCollection.find().toArray()
       res.send(result)
     })
 

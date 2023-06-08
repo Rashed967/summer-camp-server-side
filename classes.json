@@ -1,0 +1,53 @@
+
+    [
+      {
+        "image": "https://i.ibb.co/G2xzjM7/Untitled-design.png",
+        "name": "Watercolor Painting Workshop",
+        "instructor": "John Doe",
+        "availableSeats": 10,
+        "status" : "approved",
+        "price": "$50"
+      },
+      {
+        "image": "https://i.ibb.co/G2xzjM7/Untitled-design.png",
+        "name": "Sculpture Making",
+        "instructor": "Jane Smith",
+        "availableSeats": 8,
+        "status" : "approved",
+        "price": "$40"
+      },
+      {
+        "image": "https://i.ibb.co/G2xzjM7/Untitled-design.png",
+        "name": "Paper Crafts for Kids",
+        "instructor": "Alex Johnson",
+        "availableSeats": 12,
+        "status" : "approved",
+        "price": "$30"
+      },
+      {
+        "image": "https://i.ibb.co/G2xzjM7/Untitled-design.png",
+        "name": "Introduction to Pottery",
+        "instructor": "Sarah Adams",
+        "availableSeats": 6,
+        "status" : "pending",
+        "price": "$60"
+      },
+      {
+        "image": "https://i.ibb.co/G2xzjM7/Untitled-design.png",
+        "name": "Mixed Media Collage",
+        "instructor": "Michael Brown",
+        "availableSeats": 15,
+        "status" : "pending",
+        "price": "$35"
+      },
+      {
+        "image": "https://i.ibb.co/G2xzjM7/Untitled-design.png",
+        "name": "Jewelry Making Workshop",
+        "instructor": "Emily Davis",
+        "availableSeats": 10,
+        "status" : "pending",
+        "price": "$45"
+      }
+    ]
+  
+  
