@@ -1,7 +1,7 @@
 
     [
       {
-        "image": "instructor1.jpg",
+        "image": "https://ibb.co/1qWGcbz",
         "name": "John Doe",
         "email": "johndoe@example.com",
         "classesTaken": 5,
@@ -12,7 +12,7 @@
         ]
       },
       {
-        "image": "instructor2.jpg",
+        "image": "https://ibb.co/1qWGcbz",
         "name": "Jane Smith",
         "email": "janesmith@example.com",
         "classesTaken": 3,
@@ -22,7 +22,7 @@
         ]
       },
       {
-        "image": "instructor3.jpg",
+        "image": "https://ibb.co/1qWGcbz",
         "name": "Alex Johnson",
         "email": "alexjohnson@example.com",
         "classesTaken": 2,
@@ -32,7 +32,7 @@
         ]
       },
       {
-        "image": "instructor4.jpg",
+        "image": "https://ibb.co/1qWGcbz",
         "name": "Sarah Adams",
         "email": "sarahadams@example.com",
         "classesTaken": 4,
@@ -43,7 +43,7 @@
         ]
       },
       {
-        "image": "instructor5.jpg",
+        "image": "https://ibb.co/1qWGcbz",
         "name": "Michael Brown",
         "email": "michaelbrown@example.com",
         "classesTaken": 1,
@@ -53,9 +53,15 @@
         ]
       },
       {
-        "image": "instructor6.jpg",
+        "image": "https://ibb.co/1qWGcbz",
         "name": "Emily Davis",
-        "email": "emilydavis@example.com"
+        "email": "emilydavis@example.com",
+        "classesTaken": 3,
+        "classes": [
+          "Fabric Painting",
+          "Jewelry Making",
+          "Ceramic Tile Design"
+        ]
       }
     ]
   
