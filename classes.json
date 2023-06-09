@@ -6,6 +6,7 @@
         "instructor": "John Doe",
         "availableSeats": 10,
         "status" : "approved",
+        "students" : 120,
         "price": "$50"
       },
       {
