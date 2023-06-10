@@ -29,6 +29,7 @@ async function run() {
     // database collection 
     const intructorCollection = client.db('instructorDb').collection('instructors')
     const classCollection = client.db('instructorDb').collection('classs')
+    const bookedClassesCollection = client.db('instructorDb').collection('bookedClasses')
 
     
 
@@ -44,6 +45,18 @@ async function run() {
       const result = await classCollection.find().toArray()
       res.send(result)
     })
+
+
+    // booked class 
+   app.post('/bookedClasses', async(req, res) => {
+    const bookedClass = req.body
+    const id = bookedClass._id
+    if(!bookedClassesCollection.includes(id)){
+      const result = await bookedClassesCollection.insertOne(bookedClass)
+    res.send(result)
+    }
+    // const duplicate = await bookedClassesCollection.findOne({_id : id})
+   })
 
 
     // Send a ping to confirm a successful connection
