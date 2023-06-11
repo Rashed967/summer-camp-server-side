@@ -48,6 +48,13 @@ async function run() {
 
 
     // booked class 
+
+    app.get('/bookedClasses', async(req, res) => {
+      const result = await bookedClassesCollection.find({}).toArray()
+      res.send(result)
+    })
+
+
    app.post('/bookedClasses', async(req, res) => {
     const bookedClass = req.body
     const id = bookedClass._id
@@ -56,7 +63,6 @@ async function run() {
       const result = await bookedClassesCollection.insertOne(bookedClass)
     res.send(result)
     }
- 
    })
 
 
