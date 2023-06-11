@@ -52,6 +52,15 @@ async function run() {
       res.send(result)
     })
 
+    app.get('/classessByEmail', async(req, res) => {
+        const email = req.query.email
+      if(!email){
+        res.send([])
+      }
+        const result = await classCollection.find({email}).toArray()
+        res.send(result)
+    })
+
 
     // booked class 
 
