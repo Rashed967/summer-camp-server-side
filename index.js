@@ -51,11 +51,12 @@ async function run() {
    app.post('/bookedClasses', async(req, res) => {
     const bookedClass = req.body
     const id = bookedClass._id
-    if(!bookedClassesCollection.includes(id)){
+    const duplicate = await bookedClassesCollection.findOne({_id : id})
+    if(!duplicate){
       const result = await bookedClassesCollection.insertOne(bookedClass)
     res.send(result)
     }
-    // const duplicate = await bookedClassesCollection.findOne({_id : id})
+ 
    })
 
 
