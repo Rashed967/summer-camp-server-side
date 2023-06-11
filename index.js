@@ -65,6 +65,12 @@ async function run() {
     }
    })
 
+   app.delete('/bookedClasses/:id', async(req, res) => {
+    const id = req.params.id;
+    const result = await bookedClassesCollection.deleteOne({_id : id})
+    res.send(result)
+   })
+
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
