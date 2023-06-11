@@ -45,6 +45,12 @@ async function run() {
       const result = await classCollection.find().toArray()
       res.send(result)
     })
+  
+    app.post('/classes', async (req, res) => {
+      const newclass = req.body
+      const result = classCollection.insertOne(newclass)
+      res.send(result)
+    })
 
 
     // booked class 
