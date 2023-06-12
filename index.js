@@ -9,7 +9,7 @@ app.use(cors())
 app.use(express.json())
 
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const uri = "mongodb+srv://artCraftUser:pLOaqQOkVZW24t7t@cluster0.kt6fwyn.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -60,6 +60,21 @@ async function run() {
         const result = await classCollection.find({email}).toArray()
         res.send(result)
     })
+
+  app.put('/classes/:id', async (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body;
+  const filter = {_id : new ObjectId(id)}
+  const options = { upsert: true };
+  
+  const updateDoc = {
+    $set: {
+      status : status
+    },
+  }; 
+  const result = await classCollection.updateOne(filter, updateDoc, options);
+  res.send(result)
+});
 
 
     // booked class 
