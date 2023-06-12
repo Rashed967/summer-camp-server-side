@@ -58,6 +58,17 @@ async function run() {
       res.send(result)
     })
 
+    app.get('/users/instructor/:email', verifyJWT, async (req, res) => {
+      const email = req.params.email;
+      // console.log(email === req.decoded.email)
+      if (req.decoded.email !== email) {
+        res.send({ instructor : false })
+      }
+      const query = { email: email }
+      const user = await userCollection.findOne(query);
+      const result = { instructor: user?.roll === 'Instructor' }
+      res.send(result);
+    })
 
     // classes collection 
     app.get('/classes', async(req, res) => {
@@ -167,14 +178,13 @@ async function run() {
 
   app.get('/users/admin/:email', verifyJWT, async (req, res) => {
     const email = req.params.email;
-
+    // console.log(email === req.decoded.email)
     if (req.decoded.email !== email) {
       res.send({ admin: false })
     }
-
     const query = { email: email }
     const user = await userCollection.findOne(query);
-    const result = { admin: user?.roll === 'admin' }
+    const result = { admin: user?.roll === 'Admin' }
     res.send(result);
   })
 
