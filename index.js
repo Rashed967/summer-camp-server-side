@@ -116,6 +116,26 @@ async function run() {
     res.send(result);
   });
 
+  app.get('/users', async(req, res) => {
+    const result = await userCollection.find().toArray()
+    res.send(result)
+  })
+
+  app.put('/users/:id', async (req, res) => {
+    const { id } = req.params;
+    const { roll } = req.body;
+    const filter = {_id : new ObjectId(id)}
+    const options = { upsert: true };
+    
+    const updateDoc = {
+      $set: {
+        roll : roll
+      },
+    }; 
+    const result = await userCollection.updateOne(filter, updateDoc, options);
+    res.send(result)
+  });
+
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
